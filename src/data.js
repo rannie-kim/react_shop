@@ -19,7 +19,7 @@ let data = [
       id : 2,
       title : "Grey Yordan",
       content : "Born in the States",
-      price : 130000,
+      price : 13000000,
       link : "https://codingapple1.github.io/shop/shoes3.jpg"
     }
   ] 
