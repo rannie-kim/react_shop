@@ -2,13 +2,26 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useState} from 'react'
 import data from './data.js'
+import Detail from './detail.js'
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
+
 
 function App(){
   let [shoes] = useState(data); 
+  let navigate = useNavigate()
+
 
   return (
     <div className="App">
       (생략)
+      <Link to="/">홈</Link>
+      <Link to="/detail">상세페이지</Link>
+      <button onClick={() => navigate('/detail')}>이동버튼</button>
+      <Routes>
+        <Route path="/detail" element={ <Detail shoes={shoes}/> }/> 
+        <Route path="/about" element={ <div>어바웃페이지임</div> } />
+        <Route path="/detail/:id" element={ <Detail shoes={shoes}/> }/>
+      </Routes>
       <div className="container">
         <div className="row">
          <Card shoes={shoes[1]} i={2}/>
